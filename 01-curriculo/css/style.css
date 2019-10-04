@@ -1,0 +1,22 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 960px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.cabecalho {
+    text-align: center;
+}
+
+#email {
+  text-decoration: none;
+}
+
+h2 {
+    background-color: blueviolet;
+    color: white;
+}
