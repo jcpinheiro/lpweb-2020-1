@@ -10,6 +10,9 @@ body {
 
 .cabecalho {
     text-align: center;
+    border-top: solid;
+    background-color: #DDD;
+    padding-bottom: 10px;
 }
 
 #email {
@@ -19,4 +22,33 @@ body {
 h2 {
     background-color: blueviolet;
     color: white;
+
+    /* padding: 10px; */
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+
+    /* border-radius: 22px; */
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 30px;
+
+}
+
+.experiencia {
+    text-indent: 4ch;
+}
+
+.codigo {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 130%;
+    font-weight: bold;
+
+}
+
+.experiencia a {
+    text-decoration: none;
+    color: blueviolet;
+    font-size: 120%;
+
 }
