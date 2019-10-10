@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav li {
+    display: inline-block;
+    background-color: antiquewhite;
+    width: 150px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+figure {
+    text-align: center;
+
+    background-color: antiquewhite;
+    width: 290px;
+    height: 260px;
+    padding-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+figure:hover {
+    transform: rotate(-8deg);
+}
+
+.tb-nutrientes {
+    border: 2px solid #333;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.tb-nutrientes thead {
+background-color: black;
+color: #FFF;
+
+}
+
+.tb-nutrientes tbody tr:nth-child(odd) {
+    background-color: aliceblue;
+}
+
+.tb-nutrientes tbody tr:nth-child(even) {
+    background-color: aqua;
+}
