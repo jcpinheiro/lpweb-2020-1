@@ -33,7 +33,8 @@ class PedidoView {
            <tfoot>
                 <td colspan="3"></td>
                 <td>
-                    ${pedido.itens.reduce((total, item) => total + item.subTotal, 0.0)}
+                    ${pedido.itens.reduce((total, item) => 
+                        total + item.subTotal, 0.0)}
                 </td>
             </tfoot>
             
@@ -42,9 +43,14 @@ class PedidoView {
     }
 
     update(pedido ) {
-        this._elemento.innerHTML = this._template(pedido );
+        this._elemento.innerHTML = 
+                      this._template(pedido );
     }
 }
+
+
+
+
 
 
 /*           <tfoot>

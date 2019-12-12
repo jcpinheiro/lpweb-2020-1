@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos Cadastrados</title>
+</head>
+<body>
+    <h1>Listagem dos produtos Cadastrados com ejs ...</h1>
+    <table border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Descricão</th>
+            <th>Preço</th>
+        </tr>
+        <% for(var i=0; i < lista.length; i++) { %>
+         <tr>
+            <td><%= lista[i].nome %></td>
+            <td><%= lista[i].descricao %></td>
+            <td><%= lista[i].preco %></td>
+         </tr>
+        <% } %>   
+       
+    </table>      
+
+</body>
+</html>

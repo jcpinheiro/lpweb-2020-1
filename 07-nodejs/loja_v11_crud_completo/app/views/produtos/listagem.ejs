@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>Lista de Produtos Cadastrados</title>
+</head>
+
+<body>
+
+    <!-- barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+        <a class="navbar-brand" href="#">Loja Virtual</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/produtos">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/produtos/form">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Sobre ...</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- #--------------------------# -->
+
+    <div class="container">
+        <h2 class="text-center mb-3">Listagem dos Produtos Cadastrados</h2>
+
+        <table class="table">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Preço</th>
+                    <th class="scope center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < lista.length; i++) { %>
+                    <tr>
+                        <th scope="row">
+                            <%=i+1%>
+                        </th>
+                        <td>
+                            <%= lista[i].nome %>
+                        </td>
+                        <td>
+                            <%= lista[i].descricao %>
+                        </td>
+                        <td>
+                            <%= lista[i].preco %>
+                        </td>
+                        <td>
+                            <a href="/produto/edita/<%= lista[i].id %>" class="btn btn-outline-primary btn-sm">Editar</a>
+                           
+                            <form method="post" action="/produtos/remove/<%= lista[i].id %>" class="float-left">
+                                <button type="submit"  class="btn btn-outline-danger btn-sm" 
+                                        onClick="return confirm('Confirmar a exclusão do produto <%= lista[i].nome %>?')">Excluir</button>
+                               
+                            </form>
+
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+
+</html>

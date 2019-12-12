@@ -1,0 +1,46 @@
+<%- include ../layout/cabecalho.ejs %>
+
+        <h2 class="text-center mb-3">Listagem dos Produtos Cadastrados</h2>
+
+        <table class="table">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Preço</th>
+                    <th class="scope center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < lista.length; i++) { %>
+                    <tr>
+                        <th scope="row">
+                            <%=i+1%>
+                        </th>
+                        <td>
+                            <%= lista[i].nome %>
+                        </td>
+                        <td>
+                            <%= lista[i].descricao %>
+                        </td>
+                        <td>
+                            <%= lista[i].preco %>
+                        </td>
+                        <td>
+                            <a href="/produto/edita/<%= lista[i].id %>" class="btn btn-outline-primary btn-sm">Editar</a>
+                           
+                            <form method="post" action="/produtos/remove/<%= lista[i].id %>" class="float-left">
+                                <button type="submit"  class="btn btn-outline-danger btn-sm" 
+                                        onClick="return confirm('Confirmar a exclusão do produto <%= lista[i].nome %>?')">Excluir</button>
+                               
+                            </form>
+
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+
+        </table>
+
+<%- include ../layout/rodape.ejs %>

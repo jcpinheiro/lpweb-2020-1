@@ -1,0 +1,18 @@
+{
+  "name": "loja",
+  "version": "1.0.0",
+  "description": "Loja Virtual",
+  "main": "listagem-produto.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joao Carlos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}

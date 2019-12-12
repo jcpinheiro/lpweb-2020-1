@@ -1,0 +1,38 @@
+<%- include ../layout/cabecalho.ejs %>
+
+    <% if(errosValidacao) { %>
+      <ul>
+        <% for(var i=0; i < errosValidacao.length; i++) {%>
+         <li>
+            <%= errosValidacao[i].msg %>
+          </li>
+        <%}%>
+      </ul>
+    <%}%>
+ 
+   <form action="/produtos" method="post">
+        <div class="form-row">
+
+            <% if(produto.id ) { %>
+                <input type="hidden" id="id" name="id" value="<%=produto.id%>">
+            <% } %>
+             
+            <div class="form-group col-md-9">
+                <label for="nome">Nome</label>
+                <input class="form-control" type="text" id="nome" name="nome" value="<%=produto.nome%>" placeholder="Informe o nome do Produto">
+            </div>
+
+            <div class="form-group col-md-3">
+               <label for="preco">Preço</label>
+               <input class="form-control" type="text" id="preco" name="preco" value="<%=produto.preco%>" placeholder="9.90">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control" cols="20" rows="10" id="descricao" name="descricao"
+                      placeholder="Descreva as características do produto"><%=produto.descricao%></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Salvar</button>
+    </form>        
+<%- include ../layout/rodape.ejs %>

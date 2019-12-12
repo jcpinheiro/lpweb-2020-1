@@ -8,11 +8,13 @@ class Pedido {
         this._itens.push(item );
     }
 
-    get itens() {
-       // return this._itens;
+    getItens() {
+       //return this._itens;
        return [].concat(this._itens );
+
     }
 
+    
     
 
 

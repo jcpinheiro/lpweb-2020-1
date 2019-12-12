@@ -11,6 +11,7 @@ class PedidoController {
         this._pedido = new Pedido(); 
 
         this._pedidoView = new PedidoView($('#js-pedidoVendaView') );
+
         this._pedidoView.update(this._pedido );
         
         this._mensagem = new Mensagem();
@@ -22,7 +23,8 @@ class PedidoController {
     adiciona(event ) {
         
         event.preventDefault();
-      
+
+     
         let item = this._criaItemPedido();
         this._pedido.adiciona(item ); 
         this._pedidoView.update(this._pedido );

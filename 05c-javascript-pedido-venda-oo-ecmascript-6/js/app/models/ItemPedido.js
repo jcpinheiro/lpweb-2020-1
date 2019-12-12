@@ -1,6 +1,5 @@
 class ItemPedido {
 
-
     constructor(nome, quantidade, valor) {
         
         this._nome = nome;
@@ -9,8 +8,8 @@ class ItemPedido {
 
         Object.freeze(this );
     }
-    
-    get subTotal() {
+
+    getSubTotal() {
         return this._quantidade * this._valor;
     }
 
@@ -18,6 +17,10 @@ class ItemPedido {
         return this._nome;
     }
     
+    set nome(nome) {
+        this._nome = nome;
+    }
+
     get quantidade() {
         return this._quantidade;
     }

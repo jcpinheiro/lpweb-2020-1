@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Cadastro de Produto</title>
+</head>
+
+<body>
+
+    <!-- barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+            <a class="navbar-brand" href="#">Loja Virtual</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/produtos">Produtos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/produtos/form">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Sobre ...</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+    <!-- #--------------------------# -->
+
+ <div class="container">
+
+
+        <% if(errosValidacao) { %>
+           <div class="alert alert-danger"> 
+            <ul>
+                <% for(var i=0; i < errosValidacao.length; i++) {%>
+                    <li>
+                        <%= errosValidacao[i].msg %>
+                    </li>
+                    <%}%>
+
+            </ul>
+        </div> 
+       <%}%>
+ 
+
+    <form action="/produtos" method="post">
+        <div class="form-row">
+
+            <% if(produto.id ) { %>
+                <input type="hidden" id="id" name="id" value="<%=produto.id%>">
+            <% } %>
+             
+            <div class="form-group col-md-9">
+                <label for="nome">Nome</label>
+                <input class="form-control" type="text" id="nome" name="nome" value="<%=produto.nome%>" placeholder="Informe o nome do Produto">
+            </div>
+
+            <div class="form-group col-md-3">
+               <label for="preco">Preço</label>
+               <input class="form-control" type="text" id="preco" name="preco" value="<%=produto.preco%>" placeholder="9.90">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control" cols="20" rows="10" id="descricao" name="descricao"
+                      placeholder="Descreva as características do produto"><%=produto.descricao%></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Salvar</button>
+    </form>        
+  <div>
+    
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
